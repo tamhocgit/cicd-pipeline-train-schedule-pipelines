@@ -1,10 +1,14 @@
 pipeline {
   agent any
+  tools{
+      gradle 'gradle6'
+  }
   stages {
     stage ('Build') {
       steps {
         echo 'Running build automation'
-        sh 'gradlew --version'
+        sh './gradlew --version'
+        sh 'gradle --version'
       }
     }
   }
